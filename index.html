@@ -8,6 +8,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <style>
         /* --- BRANDING & DESIGN SYSTEM --- */
@@ -852,6 +853,130 @@
             transform: rotate(180deg);
         }
 
+        footer {
+            display: flex;
+            justify-content: space-between;
+            /* Pushes left section and right section apart */
+            align-items: flex-end;
+            /* Aligns both sections to the BOTTOM line */
+            gap: 20px;
+            padding: 30px 20px;
+            background-color: #dce0e6;
+            /* Dark background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Left Section: Header & Links */
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            /* Space between header and links */
+        }
+
+        /* Heading Styling */
+        footer h2 {
+            font-size: 18px;
+            color: #222121;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Links Wrapper (Vertical Stack) */
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            /* Space between individual text links */
+        }
+
+        /* Base Link Button Style */
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            /* Space between icon and text */
+            text-decoration: underline;
+            /* Permanent underline applied */
+            color: #1a1919;
+            font-size: 16px;
+            font-weight: 300;
+            transition: color 0.2s ease;
+        }
+
+        /* Link Hover State */
+        .contact-item:hover {
+            color: #0070bb;
+            /* Smooth blue transition on hover */
+        }
+
+        /* Inline Icon Styling */
+        .icon-box {
+            display: inline-flex;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        /* Hide duplicate headers inside HTML */
+        .contact-details h3 {
+            display: none;
+        }
+
+        /* Link Button Text */
+        .contact-details span {
+            font-size: 16px;
+            text-transform: capitalize;
+        }
+
+        /* ==========================================
+   Right Section: Side-by-Side Icons (Horizontal)
+   ========================================== */
+        .footer-right-socials {
+            display: flex;
+            flex-direction: row;
+            /* Changed to row to put them 1 beside 1 */
+            gap: 12px;
+            /* Equal spacing between the two buttons */
+            margin-bottom: 2px;
+            /* Tiny adjustment to line up perfectly with the text link baseline */
+        }
+
+        /* Circular Icon Button Base */
+        .social-round-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            /* Makes it completely round */
+            background-color: #2d2d2d;
+            /* Muted button color */
+            color: #f1f1f1;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Interactive States */
+        .social-round-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .social-round-btn.fb:hover {
+            background-color: #1877F2;
+            /* Official Facebook Blue */
+            color: #ffffff;
+        }
+
+        .social-round-btn.insta:hover {
+            background-color: #E1306C;
+            /* Official Instagram Pink-Red */
+            color: #ffffff;
+        }
+
+
         /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 1024px) {
             .product-grid {
@@ -1081,6 +1206,63 @@
             </div>
         </div>
     </div>
+    <footer>
+        <div class="footer-left">
+            <h2>Contact Us</h2>
+
+            <div class="footer-links">
+
+                <!-- Email -->
+                <a href="mailto:forhadalpha08@gmail.com" class="contact-item">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <span>email</span>
+                    </div>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/8801342900364" class="contact-item">
+                    <div class="icon-box">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>WhatsApp</h3>
+                        <span>whatsapp</span>
+                    </div>
+                </a>
+
+                <!-- Facebook -->
+                <a rel href="https://www.facebook.com/profile.php?id=61580779565120" class="contact-item">
+                    <div class="icon-box">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Facebook</h3>
+                        <span>facebook</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="footer-right-socials">
+
+            <!-- Facebook -->
+            <a rel href="https://www.facebook.com/profile.php?id=61580779565120" class="social-round-btn fb"
+                title="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/" class="social-round-btn insta" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+        </div>
+    </footer>
 
     <script>
         // --- DATA ---
