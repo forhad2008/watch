@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boraldo Store</title>
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -146,10 +146,10 @@
         }
 
         .hero-bg {
-            width: 100%;
+            width: 140%;
             height: 100%;
-            background: linear-gradient(rgba(180, 90, 90, 0.1), rgba(0, 0, 0, 0.3)), url('13.webp') center/cover no-repeat;
-            transform: scale(1.15);
+            background: linear-gradient(rgba(107, 2, 2, 0.1), rgba(0, 0, 0, 0.5)), url('13.1.png') center/cover no-repeat;
+            transform: scale(1.5);
         }
 
         .hero-content {
@@ -448,7 +448,7 @@
             height: 100%;
             background: radial-gradient(circle at 80% 20%, rgba(110, 105, 98, 0.335) 0%, transparent 50%),
                 linear-gradient(180deg, rgba(15, 15, 14, 0.712) 0%, rgba(20, 20, 18, 0.342) 100%),
-                url('180.webp') center/cover no-repeat;
+                url('180.png') center/cover no-repeat;
             z-index: 1;
             opacity: 0.85;
         }
@@ -853,6 +853,41 @@
             transform: rotate(180deg);
         }
 
+        /* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 80px 0;
+}
+
+.page-btn {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    border: 1px solid rgba(0,0,0,0.2);
+    background: transparent;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s var(--ease-editorial);
+}
+
+.page-btn:hover {
+    background: var(--text-color);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.page-btn.active {
+    background: var(--text-color);
+    color: var(--white);
+}
+
         footer {
             display: flex;
             justify-content: space-between;
@@ -861,7 +896,7 @@
             /* Aligns both sections to the BOTTOM line */
             gap: 20px;
             padding: 30px 20px;
-            background-color: #161616;
+            background-color: #0c0c0c;
             /* Dark background */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -876,7 +911,7 @@
 
         /* Heading Styling */
         footer h2 {
-            font-size: 18px;
+            font-size: 15px;
             color: #e6e3e3;
             margin: 0;
             font-weight: 500;
@@ -975,8 +1010,6 @@
             /* Official Instagram Pink-Red */
             color: #ffffff;
         }
-
-
         /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 1024px) {
             .product-grid {
@@ -1078,7 +1111,7 @@
 <body>
 
     <div class="announcement-bar">
-        Luxury Watch for modern Stylish Fashon.
+        Luxury watches for modern stylish fashion.
     </div>
 
     <header id="main-header">
@@ -1106,9 +1139,9 @@
         </div>
         <div class="hero-content">
             <div class="reveal-wrapper">
-                <h1 id="hero-title">The Iconic Watch</h1>
+                <h1 id="hero-title">The Stylish Shoes</h1>
             </div>
-            <p id="hero-subtitle">Premium aesthetics designed for timeless modern Luxury-fashion.</p>
+            <p id="hero-subtitle">Premium aesthetics designed for timeless modern street-fashion.</p>
             <a href="#shop" class="cta-btn" id="hero-btn">Explore Drop</a>
         </div>
     </section>
@@ -1124,19 +1157,19 @@
         <div class="luxury-bg-fluid" id="luxury-fluid-bg"></div>
         <div class="luxury-editorial-container">
             <div class="luxury-editorial-text">
-                <span class="luxury-meta" id="lux-meta">Premium Watch</span>
+                <span class="luxury-meta" id="lux-meta">Leather Shoes</span>
                 <h2 id="lux-title">Uncompromising<br>Luxury Quality</h2>
                 <p id="lux-p">
-                    Limited luxury Watch only limited pieces are made. For royal people</p>
+                    Limited luxury shoes only limited pieces are made .</p>
                 <a href="#shop" class="cta-btn" id="lux-btn"
                     style="background-color: transparent; border: 1px solid #ffffff; color: #ffffff;">View
                     Craftsmanship</a>
             </div>
             <div class="luxury-editorial-gallery">
                 <div class="luxury-img-wrapper primary" id="lux-img-1">
-                    <img src="180.png" alt="Luxury Close-up Look" id="lux-src-1">
+                    <img src="14.png" alt="Luxury Close-up Look" id="lux-src-1">
                 </div>
-            </div>
+        </div>
     </section>
 
     <section class="main-content">
@@ -1157,9 +1190,10 @@
 
 
         <nav class="drawer-menu">
-            <ul class="drawer-menu">
-                <li><a href="https://forhad2008.github.io/boraldo-store/">Home</a></li>
-
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" onclick="closeCart()">Our Story</a></li>
+        
                 <li class="has-submenu">
                     <button class="submenu-toggle-btn" onclick="toggleSubmenu(event)">
                         Explore Collection <span class="arrow">▼</span>
@@ -1167,19 +1201,27 @@
                     <ul class="submenu" id="explore-submenu">
                         <li><a href="shop.webp">Product Collection Demo</a></li>
                         <li><a href="bag.webp">Bag Collection</a></li>
-
+                        
                         <li><a href="https://forhad2008.github.io/shoes/">Shoes Collection</a></li>
                         <li><a href="https://forhad2008.github.io/winter/">Winter Fashion</a></li>
                         <li><a href="index.html">Watch Collection</a></li>
 
                     </ul>
                 </li>
+                <li><a href="https://forhad2008.github.io/Boraldo/page1.html">Explore T-shirts</a></li>
+        
                 <br> <br> <br>
                 <li><a href="https://www.facebook.com/profile.php?id=61580779565120" onclick="closeCart()">The
                         Founder</a></li>
                 <li><a href="https://forhad2008.github.io/portfolio/" onclick="closeCart()">About The Founder</a></li>
             </ul>
-        </nav>
+            <ul>
+                <button class="modal-cart-link-btn" onclick="openCartModal()">
+                    <span>Shopping Bag</span>
+                    <span class="modal-cart-count-badge" id="drawerCartCount">0</span>
+                </button>
+            </ul>
+</nav>
     </div>
 
     <div class="cart-modal-overlay" id="cartModal" onclick="closeCartModalOutside(event)">
@@ -1197,21 +1239,38 @@
                     <span id="cartTotalPrice">$0.00</span>
                 </div>
 
-                <form class="checkout-form" onsubmit="event.preventDefault(); alert('Order Placed Successfully!');">
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                    <input type="text" placeholder="Card Details" required>
-                    <button class="checkout-btn" type="submit">Complete Order</button>
+                <form class="checkout-form" id="checkoutForm">
+
+                    <input id="customerName" type="text" placeholder="Full Name" required>
+
+                    <input id="customerEmail" type="email" placeholder="Email Address" required>
+
+                    <input id="customerAddress" type="text" placeholder="Shipping Address" required>
+
+                    <input id="customerPhone" type="tel" placeholder="Phone Number" required>
+
+                    <button class="checkout-btn" type="submit">
+                        Complete Order
+                    </button>
                 </form>
             </div>
         </div>
     </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <a href="index.html" class="page-btn active">1</a>
+        <a href="2.html" class="page-btn">2</a>
+        <a href="3.html" class="page-btn">3</a>
+
+    </div> 
+    
     <footer>
         <div class="footer-left">
             <h2>Contact Us</h2>
-
+    
             <div class="footer-links">
-
+    
                 <!-- Email -->
                 <a href="mailto:forhadalpha08@gmail.com" class="contact-item">
                     <div class="icon-box">
@@ -1222,7 +1281,7 @@
                         <span>email</span>
                     </div>
                 </a>
-
+    
                 <!-- WhatsApp -->
                 <a href="https://wa.me/8801342900364" class="contact-item">
                     <div class="icon-box">
@@ -1233,7 +1292,7 @@
                         <span>whatsapp</span>
                     </div>
                 </a>
-
+    
                 <!-- Facebook -->
                 <a rel href="https://www.facebook.com/profile.php?id=61580779565120" class="contact-item">
                     <div class="icon-box">
@@ -1244,30 +1303,29 @@
                         <span>facebook</span>
                     </div>
                 </a>
-
+    
             </div>
         </div>
-
+    
         <div class="footer-right-socials">
-
+    
             <!-- Facebook -->
             <a rel href="https://www.facebook.com/profile.php?id=61580779565120" class="social-round-btn fb"
                 title="Facebook">
                 <i class="fa-brands fa-facebook-f"></i>
             </a>
-
+    
             <!-- Instagram -->
             <a href="https://www.instagram.com/" class="social-round-btn insta" title="Instagram">
                 <i class="fa-brands fa-instagram"></i>
             </a>
-
+    
         </div>
     </footer>
 
     <script>
-        // --- DATA ---
         const products = [
-            { id: "prod-01", title: "Boraldo Panda Edition Luxury Watch", price: 7000, badge: "Best Selling", image: "1.webp", link: "1.webp" },
+        { id: "prod-01", title: "Boraldo Panda Edition Luxury Watch", price: 7000, badge: "Best Selling", image: "1.webp", link: "1.webp" },
             { id: "prod-02", title: "Boraldo Moon Edition Luxury Watch", price: 7999.99, badge: "Classic", image: "2.webp", link: "2.webp" },
             { id: "prod-03", title: "Boraldo Penguin Edition Luxury Watch", price: 8250.00, badge: "Exclusive", image: "3.webp", link: "3.webp" },
             { id: "prod-04", title: "Boraldo Jangle Edition Luxury Watch", price: 12750.00, badge: "Premium", image: "4.1.webp", link: "4.1.webp" },
@@ -1285,147 +1343,511 @@
             { id: "prod-14", title: "Boraldo Jellyfish Edition Luxury Watch", price: 63750.00, badge: "Exclusive", image: "13.webp", link: "13.1.webp" },
             { id: "prod-15", title: "Boraldo Snake Edition Luxury Watch", price: 64900.00, badge: "Exclusive", image: "14.webp", link: "14.webp" },
             { id: "prod-16", title: "Boraldo Wolf Edition Luxury Watch", price: 64900.00, badge: "Exclusive", image: "15.webp", link: "15.webp" },
- 
-            { id: "prod-17", title: "Boraldo Royal Roar Football Edition Imperium Red Luxury Watch", price: 680000, badge: "Exclusive", image: "16.webp", link: "16.webp" },
-            { id: "prod-18", title: "Boraldo Royal Roar Cricket Edition Imperium Red Luxury Watch", price: 679999, badge: "Exclusive", image: "17.webp", link: "17.webp" },
-            { id: "prod-19", title: "Boraldo Royal Roar Boxing Edition Luxury Watch", price: 679899, badge: "Exclusive", image: "18.webp", link: "18.webp" },
-            { id: "prod-20", title: "Boraldo Royal Roar Basketball Edition Luxury Watch", price: 679899, badge: "Exclusive", image: "19.webp", link: "19.webp" },
-            { id: "prod-21", title: "Boraldo Royal Roar Ant Edition Luxury Watch", price: 679949, badge: "Exclusive", image: "20.webp", link: "20.webp" },
-            { id: "prod-22", title: "Boraldo Royal Roar Lion Edition Imperium Red  Luxury Watch", price: 680099, badge: "Exclusive", image: "21.webp", link: "21.webp" },
-            { id: "prod-23", title: "Boraldo Muzan X Demon Slayer (King Edition) Luxury Watch", price: 699999, badge: "Exclusive", image: "dem.webp", link: "dem.webp" },
+
+
+
+
+
+
+
 
 
         ];
 
-        // --- DOM INITIALIZATION & RENDER ---
-        document.addEventListener("DOMContentLoaded", () => {
-            renderProducts();
-            initAnimations();
-        });
+            let cart = JSON.parse(localStorage.getItem('threadlab_cart')) || [];
 
-        function renderProducts() {
-            const standardGrid = document.getElementById("product-grid");
-            const extendedGrid = document.getElementById("product-grid-extended");
-
-            if (!standardGrid || !extendedGrid) return;
-
-            // First 4 items go into the standard product grid
-            const standardProducts = products.slice(0, 4);
-            // Remaining items go into the custom editorial layout stack
-            const luxuryProducts = products.slice(4);
-
-            // 1. Render Standard Grid (Without Add to Bag button)
-            standardGrid.innerHTML = standardProducts.map(prod => `
-                    <div class="product-card" id="card-${prod.id}">
-                        <div class="image-container">
-                            ${prod.badge ? `<span class="badge">${prod.badge}</span>` : ''}
-                            <a href="${prod.link}">
-                                <img src="${prod.image}" alt="${prod.title}" class="product-image">
-                            </a>
+            // --- RENDER FUNCTIONS ---
+            function renderProductGrid(items, isLuxuryStyle = false) {
+                if (!isLuxuryStyle) {
+                    return items.map(p => `
+                        <div class="product-card">
+                            <div class="image-container">
+                                ${p.badge ? `<div class="badge">${p.badge}</div>` : ''}
+                                <a href="${p.link}"><img src="${p.image}" alt="${p.title}" class="product-image"></a>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-title"><a href="${p.link}">${p.title}</a></span>
+                                <span class="product-price">$${p.price.toFixed(2)}</span>
+                            </div>
                         </div>
-                        <div class="product-info">
-                            <h3 class="product-title">
-                                <a href="${prod.link}">${prod.title}</a>
-                            </h3>
-                            <span class="product-price">$${prod.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
+                    `).join('');
+                } else {
+                    return items.map((p, index) => `
+                        <div class="luxury-editorial-card ${index % 2 === 1 ? 'reverse' : ''}">
+                            <div class="lux-card-image-wrapper">
+                                ${p.badge ? `<div class="badge">${p.badge}</div>` : ''}
+                                <a href="${p.link}"><img src="${p.image}" alt="${p.title}"></a>
+                            </div>
+                            <div class="lux-card-details">
+                                <span class="lux-card-meta">Atelier Drop Exclusive</span>
+                                <h3 class="lux-card-title"><a href="${p.link}">${p.title}</a></h3>
+                                <p class="lux-card-price">$${p.price.toFixed(2)}</p>
+                                <button class="lux-add-btn" onclick="addToCart('${p.id}')">Acquire Shoes</button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            function renderMarqueeItems(items) {
+                return items.map(p => `
+                    <div class="marquee-item">
+                        <div class="marquee-img-box">
+                            ${p.badge ? `<div class="badge">${p.badge}</div>` : ''}
+                            <a href="${p.link}"><img src="${p.image}" alt="${p.title}"></a>
+                        </div>
+                        <div class="marquee-item-details">
+                            <h4>${p.title}</h4>
+                            <p>$${p.price.toFixed(2)}</p>
+                            <button class="lux-add-btn small-btn" onclick="addToCart('${p.id}')">Acquire</button>
                         </div>
                     </div>
                 `).join('');
+            }
 
-            // 2. Render Luxury Editorial Stack (Without Add to Bag button)
-            extendedGrid.innerHTML = luxuryProducts.map((prod, index) => {
-                const isReverse = index % 2 !== 0 ? 'reverse' : '';
-                return `
-                        <div class="luxury-editorial-card ${isReverse}" id="card-${prod.id}">
-                            <div class="lux-card-image-wrapper">
-                                <a href="${prod.link}">
-                                    <img src="${prod.image}" alt="${prod.title}">
-                                </a>
+          function initProducts() {
+            const grid1 = document.getElementById('product-grid');
+            const grid2 = document.getElementById('product-grid-extended');
+
+            if (grid1) {
+                grid1.innerHTML = renderProductGrid(products.slice(0, 4), false);
+            }
+            if (grid2) {
+                grid2.innerHTML = renderProductGrid(products.slice(4), true);
+            }
+        }
+
+            // --- CART SYSTEM LOGIC ---
+            function addToCart(productId) {
+                const targetProduct = products.find(p => p.id === productId);
+                if (targetProduct) {
+                    cart.push({
+                        id: targetProduct.id,
+                        title: targetProduct.title,
+                        price: targetProduct.price,
+                        size: 'L',
+                        color: 'Default'
+                    });
+                    localStorage.setItem('threadlab_cart', JSON.stringify(cart));
+                    updateCartUI();
+                    openCartModal();
+                }
+            }
+
+            function removeFromCart(index) {
+                cart.splice(index, 1);
+                localStorage.setItem('threadlab_cart', JSON.stringify(cart));
+                updateCartUI();
+            }
+
+            function updateCartUI() {
+                const headerCount = document.getElementById('cartCountHeader');
+                if (headerCount) headerCount.innerText = cart.length;
+                const drawerCount = document.getElementById("drawerCartCount");
+                if (drawerCount) drawerCount.innerText = cart.length;
+
+                const listContainer = document.getElementById('cartItemList');
+                const totalContainer = document.getElementById('cartTotalPrice');
+
+                if (!listContainer) return;
+
+                listContainer.innerHTML = "";
+                let totalPrice = 0;
+
+                if (cart.length === 0) {
+                    listContainer.innerHTML = "<p style='color: #888; text-align: center; padding: 20px 0;'>Your cart is currently empty.</p>";
+                } else {
+                    cart.forEach((item, index) => {
+                        totalPrice += item.price;
+                        listContainer.innerHTML += `
+                            <div class="cart-item">
+                                <div class="cart-item-info">
+                                    <strong>${item.title}</strong> <br>
+                                    <small>Size: ${item.size} | Color: ${item.color}</small>
+                                </div>
+                                <div class="cart-item-actions">
+                                    <span>$${item.price.toFixed(2)}</span>
+                                    <button class="remove-item-btn" onclick="removeFromCart(${index})">&times;</button>
+                                </div>
                             </div>
-                            <div class="lux-card-details">
-                                <span class="lux-card-meta">${prod.badge || 'Premium Drop'}</span>
-                                <h3 class="lux-card-title">
-                                    <a href="${prod.link}">${prod.title}</a>
-                                </h3>
-                                <span class="lux-card-price">$${prod.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
-                            </div>
-                        </div>
-                    `;
-            }).join('');
-        }
+                        `;
+                    });
+                }
+                if (totalContainer) totalContainer.innerText = `$${totalPrice.toFixed(2)}`;
+            }
 
-        // --- NAVIGATION DRAWER (MENU) OVERLAYS ---
-        function openCart() {
-            const panel = document.getElementById("cart-panel");
-            const overlay = document.getElementById("cart-overlay");
+            // --- UI INTERACTIONS (MODALS & DRAWER) ---
+            function toggleSubmenu(event) {
+                event.preventDefault();
+                const btn = event.currentTarget;
+                const submenu = document.getElementById('explore-submenu');
+                btn.classList.toggle('active');
+                submenu.classList.toggle('open');
+            }
 
-            overlay.style.display = "block";
-            gsap.to(overlay, { opacity: 1, duration: 0.4 });
-            gsap.to(panel, { x: "0%", duration: 0.5, ease: "power3.out" });
-        }
+            function openCartModal() {
+                closeCart();
+                document.getElementById('cartModal').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
 
-        function closeCart() {
-            const panel = document.getElementById("cart-panel");
-            const overlay = document.getElementById("cart-overlay");
+            function closeCartModal() {
+                document.getElementById('cartModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
 
-            gsap.to(panel, { x: "100%", duration: 0.4, ease: "power3.in" });
-            gsap.to(overlay, {
-                opacity: 0,
-                duration: 0.4,
-                onComplete: () => { overlay.style.display = "none"; }
-            });
-        }
+            function closeCartModalOutside(event) {
+                if (event.target.id === 'cartModal') {
+                    closeCartModal();
+                }
+            }
 
-        function toggleSubmenu(event) {
-            event.preventDefault();
-            const btn = event.currentTarget;
-            const submenu = document.getElementById("explore-submenu");
+            function openCart() {
+                document.getElementById('cart-overlay').style.display = 'block';
+                gsap.to("#cart-overlay", { opacity: 1, duration: 0.4 });
+                gsap.to("#cart-panel", { x: '0%', duration: 0.6, ease: "power4.out" });
+                gsap.from(".drawer-menu li", { x: 30, opacity: 0, stagger: 0.08, duration: 0.6, ease: "power3.out", delay: 0.2 });
+            }
 
-            btn.classList.toggle("active");
-            submenu.classList.toggle("open");
-        }
+            function closeCart() {
+                gsap.to("#cart-overlay", {
+                    opacity: 0, duration: 0.4, onComplete: () => {
+                        document.getElementById('cart-overlay').style.display = 'none';
+                    }
+                });
+                gsap.to("#cart-panel", { x: '100%', duration: 0.6, ease: "power4.inOut" });
+            }
 
-        // --- GSAP REVEAL ANIMATIONS ---
-        function initAnimations() {
+            // --- GSAP ANIMATIONS & ENGINE CONTROL ---
             gsap.registerPlugin(ScrollTrigger);
 
-            // Hero Entrance
-            const tl = gsap.timeline();
-            tl.to("#hero-img", { scale: 1, duration: 1.8, ease: "power2.out" })
-                .to("#hero-title", { y: 0, duration: 1.2, ease: "power4.out" }, "-=1.2")
-                .to("#hero-subtitle", { opacity: 1, y: 0, duration: 0.8 }, "-=0.6")
-                .to("#hero-btn", { opacity: 1, y: 0, duration: 0.8 }, "-=0.6");
+            window.addEventListener('DOMContentLoaded', () => {
+                initProducts();
+                updateCartUI();
 
-            // Scroll Reveal standard product cards
-            gsap.utils.toArray(".product-card").forEach(card => {
-                gsap.to(card, {
-                    scrollTrigger: {
-                        trigger: card,
-                        start: "top 85%",
-                        toggleActions: "play none none none"
-                    },
+                // Main Entrance Landing Animation
+                const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+                tl.to("#hero-img", { scale: 1, duration: 2 })
+                    .from("header", { y: -100, opacity: 0, duration: 1.2 }, "-=1.5")
+                    .from("#hero-title", { yPercent: 100, duration: 1.4 }, "-=1")
+                    .to("#hero-subtitle", { opacity: 1, y: 0, duration: 1 }, "-=0.8")
+                    .to("#hero-btn", { opacity: 1, y: 0, duration: 1 }, "-=0.8");
+
+
+                // --- PRO-GRADE GSAP AUTO-PLAY MARQUEE WITH INTERACTION SMOOTHING ---
+                const watchTrack = document.getElementById("watch-marquee-track");
+
+                if (watchTrack) {
+                    watchTrack.style.cursor = "grab";
+                    watchTrack.parentNode.style.overflow = "hidden";
+
+                    let trackWidth = watchTrack.offsetWidth / 2;
+                    let currentX = 0;
+                    let isDragging = false;
+                    let startX = 0;
+                    let dragX = 0;
+                    let velocity = 0;
+                    let lastX = 0;
+                    let lastTime = 0;
+                    let animationFrameId = null;
+
+                    const baseAutoSpeed = -1.5; // পিক্সেল পার ফ্রেম অটো-প্লে স্পিড
+                    let currentSpeed = baseAutoSpeed;
+
+                    window.addEventListener('resize', () => {
+                        trackWidth = watchTrack.offsetWidth / 2;
+                    });
+
+                    const getEventX = (e) => e.touches ? e.touches[0].clientX : e.clientX;
+
+                    // মোমেন্টাম এবং গ্লাইড ইফেক্ট ইঞ্জিন লুপ
+                    function updateMarquee() {
+                        if (!isDragging) {
+                            currentSpeed += (baseAutoSpeed - currentSpeed) * 0.05; // স্পিড ডিকে বা স্মুথ ট্রানজিশন
+                            currentX += currentSpeed;
+                        } else {
+                            const now = performance.now();
+                            const elapsed = now - lastTime;
+                            if (elapsed > 0) {
+                                velocity = (currentX - lastX) / elapsed;
+                                lastX = currentX;
+                                lastTime = now;
+                            }
+                        }
+
+                        // সীমহীন বাউন্ডারি ম্যানেজমেন্ট
+                        if (currentX > 0) {
+                            currentX -= trackWidth;
+                            lastX -= trackWidth;
+                        } else if (currentX < -trackWidth) {
+                            currentX += trackWidth;
+                            lastX += trackWidth;
+                        }
+
+                        gsap.set(watchTrack, { x: currentX });
+                        animationFrameId = requestAnimationFrame(updateMarquee);
+                    }
+
+                    animationFrameId = requestAnimationFrame(updateMarquee);
+
+                    // ইভেন্ট লিসেনার হ্যান্ডলারসমূহ
+                    const dragStart = (e) => {
+                        isDragging = true;
+                        watchTrack.style.cursor = "grabbing";
+                        startX = getEventX(e);
+                        dragX = currentX;
+                        velocity = 0;
+                        lastX = currentX;
+                        lastTime = performance.now();
+                    };
+
+                    const dragMove = (e) => {
+                        if (!isDragging) return;
+                        const x = getEventX(e);
+                        const deltaX = x - startX;
+                        currentX = dragX + deltaX;
+                    };
+
+                    const dragEnd = () => {
+                        if (!isDragging) return;
+                        isDragging = false;
+                        watchTrack.style.cursor = "grab";
+
+                        currentSpeed = velocity * 16.66; // ইউজার ফ্লিক স্পিড ক্যালকুলেশন
+
+                        // বাউন্ডারি স্পিড ক্ল্যাম্প
+                        if (currentSpeed < -15) currentSpeed = -15;
+                        if (currentSpeed > 15) currentSpeed = 15;
+                    };
+
+                    // টাচ স্ক্রিন (মোবাইল)
+                    watchTrack.addEventListener("touchstart", dragStart, { passive: true });
+                    watchTrack.addEventListener("touchmove", dragMove, { passive: true });
+                    window.addEventListener("touchend", dragEnd);
+
+                    // মাউস অ্যাকশন (ডেস্কটপ)
+                    watchTrack.addEventListener("mousedown", dragStart);
+                    window.addEventListener("mousemove", dragMove);
+                    window.addEventListener("mouseup", dragEnd);
+                }
+                // --- SCROLL CODE END ---
+
+
+                // Standard Collection Row entry stagger animation
+                gsap.to("#product-grid .product-card", {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
-                    ease: "power2.out"
-                });
-            });
-
-            // Scroll Reveal premium extended elements 
-            gsap.utils.toArray(".luxury-editorial-card").forEach(card => {
-                gsap.to(card, {
+                    duration: 1.2,
+                    stagger: 0.1,
+                    ease: "power3.out",
                     scrollTrigger: {
-                        trigger: card,
-                        start: "top 80%",
-                    },
+                        trigger: "#product-grid",
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                });
+
+                // Luxury Custom Layout collection entry trigger block
+                ScrollTrigger.batch(".luxury-editorial-card", {
+                    start: "top 85%",
+                    onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, duration: 1.2, stagger: 0.2, ease: "power3.out" })
+                });
+
+                // Parallax Fluid Background Effects
+                gsap.to("#luxury-fluid-bg", {
+                    yPercent: 15,
+                    scrollTrigger: {
+                        trigger: ".luxury-editorial-section",
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+
+                gsap.to("#lux-src-1", {
+                    scale: 1,
+                    yPercent: -8,
+                    scrollTrigger: {
+                        trigger: ".luxury-editorial-section",
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+
+                gsap.to("#lux-src-2", {
+                    scale: 1,
+                    yPercent: 8,
+                    scrollTrigger: {
+                        trigger: ".luxury-editorial-section",
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+
+                gsap.from(["#lux-meta", "#lux-title", "#lux-p", "#lux-btn"], {
+                    opacity: 0,
+                    y: 50,
+                    duration: 1.2,
+                    stagger: 0.15,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: ".luxury-editorial-section",
+                        start: "top 65%",
+                        toggleActions: "play none none none"
+                    }
+                });
+
+                // --- BOTTOM HERO 1 REVEAL ANIMATIONS ---
+                gsap.to("#hero1-img-wrapper", {
+                    opacity: 1,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: ".hero1",
+                        start: "top 75%",
+                        toggleActions: "play none none none"
+                    }
+                });
+
+                gsap.to("#hero1-img", {
+                    scale: 1,
+                    scrollTrigger: {
+                        trigger: ".hero1",
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+
+                gsap.from("#hero1-title", {
+                    yPercent: 100,
+                    duration: 1.4,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: ".hero1",
+                        start: "top 60%",
+                        toggleActions: "play none none none"
+                    }
+                });
+
+                gsap.to(["#hero1-subtitle", "#hero1-btn"], {
                     opacity: 1,
                     y: 0,
                     duration: 1,
-                    ease: "power3.out"
+                    stagger: 0.2,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: ".hero1",
+                        start: "top 55%",
+                        toggleActions: "play none none none"
+                    }
+                });
+
+                // --- HERO 2 REVEAL ANIMATIONS ---
+                gsap.to("#hero2-img-wrapper", {
+                    opacity: 1,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: ".hero2",
+                        start: "top 75%",
+                        toggleActions: "play none none none"
+                    }
+                });
+
+                gsap.to("#hero2-img", {
+                    scale: 1,
+                    scrollTrigger: {
+                        trigger: ".hero2",
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+
+                gsap.from("#hero2-title", {
+                    yPercent: 100,
+                    duration: 1.4,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: ".hero2",
+                        start: "top 60%",
+                        toggleActions: "play none none none"
+                    }
+                });
+
+                gsap.to(["#hero2-subtitle", "#hero2-btn"], {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: ".hero2",
+                        start: "top 55%",
+                        toggleActions: "play none none none"
+                    }
+                });
+
+                // =======================
+                // GOOGLE APPS SCRIPT ORDER SYSTEM
+                // =======================
+                const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwlDqaMagZ-fguU4VbA9_0XBNM29K-M7eN_4MLUat0n9BiGJdMy-7shiwykAZ2foqFb/exec";
+
+                document.getElementById("checkoutForm").addEventListener("submit", async function (e) {
+                    e.preventDefault();
+
+                    if (cart.length === 0) {
+                        alert("Your cart is empty.");
+                        return;
+                    }
+
+                    const customerName = document.getElementById("customerName").value.trim();
+                    const customerEmail = document.getElementById("customerEmail").value.trim();
+                    const customerPhone = document.getElementById("customerPhone").value.trim();
+                    const customerAddress = document.getElementById("customerAddress").value.trim();
+
+                    let productList = "";
+                    cart.forEach(item => {
+                        productList += `${item.title}\nPrice : $${item.price}\n------------------------\n`;
+                    });
+
+                    const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+                    const orderData = {
+                        name: customerName,
+                        email: customerEmail,
+                        phone: customerPhone,
+                        address: customerAddress,
+                        products: productList,
+                        total: total.toFixed(2),
+                        orderTime: new Date().toLocaleString()
+                    };
+
+                    try {
+                        closeCartModal();
+                        cart = [];
+                        localStorage.removeItem("threadlab_cart");
+                        updateCartUI();
+                        document.getElementById("checkoutForm").reset();
+
+                        await fetch(SCRIPT_URL, {
+                            method: "POST",
+                            mode: "no-cors",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(orderData)
+                        });
+
+                        alert("✅ Order Submitted Successfully!");
+                    } catch (error) {
+                        console.error(error);
+                        alert("❌ Failed to send order.");
+                    }
                 });
             });
-        }
-    </script>
+        </script>
 </body>
 
 </html>
